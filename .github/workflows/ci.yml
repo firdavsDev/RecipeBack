@@ -1,6 +1,5 @@
 name: CI
 
-# Enable Buildkit and let compose use it to speed up image building
 env:
   DOCKER_BUILDKIT: 1
   COMPOSE_DOCKER_CLI_BUILD: 1
@@ -37,17 +36,20 @@ jobs:
         with:
           extra_args: --all-files --show-diff-on-failure
 
-  pytest:
+  build-and-migrate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v4
+
+      - name: Set up Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version
 
       - name: Build the Stack
         run: docker-compose -f local.yml build
 
       - name: Run DB Migrations
         run: docker-compose -f local.yml run --rm django python manage.py migrate
-
-      # - name: Run Tests
-      #   run: docker-compose -f local.yml run --rm django pytest
