@@ -1,5 +1,3 @@
-![Django project](https://github.com/name/name_api.git)
-
 # Recipe Karantin API
 
 
