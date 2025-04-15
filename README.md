@@ -1,6 +1,6 @@
 ![Django project](https://github.com/name/name_api.git)
 
-# Name EXTENSION API
+# Recipe Karantin API
 
 
 Folder Structure Conventions

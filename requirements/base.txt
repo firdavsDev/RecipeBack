@@ -1,5 +1,5 @@
 # Python
-whitenoise==5.3.0 # https://pypi.org/project/whitenoise/
+whitenoise==6.9.0 # https://pypi.org/project/whitenoise/
 pre-commit==2.15.0 # https://pre-commit.com/
 requests==2.28.0 # https://pypi.org/project/requests/
 
@@ -13,17 +13,16 @@ django-debug-toolbar==3.5.0 # https://django-debug-toolbar.readthedocs.io/en/lat
 # Django REST Framework
 djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
 django-cors-headers==4.1.0  # https://github.com/adamchainz/django-cors-headers
-djangochannelsrestframework==0.3.0 # https://djangochannelsrestframework.readthedocs.io/en/latest/
 
 # DRF-spectacular for api documentation
 drf-spectacular==0.26.3  # https://github.com/tfranzel/drf-spectacular
 
 # Postgres
-psycopg2-binary==2.9.2 # https://pypi.org/project/psycopg2-binary/
+psycopg2-binary==2.9.10 # https://pypi.org/project/psycopg2-binary/
 
 #Backgound Task (cellery)
-celery==5.1.2
+celery==5.5.1
 redis==3.5.3
 
 #Celery monitoring https://cronitor.io/
-cronitor==4.5.0
+cronitor==4.7.1

@@ -3,8 +3,8 @@ from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from src.apps.common.models import BaseModel, RoleChoice
 from src.apps.account.managers.account import UserManager
+from src.apps.common.models import BaseModel, RoleChoice
 
 
 class User(AbstractBaseUser, PermissionsMixin, BaseModel):
@@ -24,8 +24,8 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
     )
     role = models.CharField(
         choices=RoleChoice.choices,
-        default=RoleChoice.PLANNER,
-        max_length=15,
+        default=RoleChoice.pharmacist,
+        max_length=35,
     )
     is_active = models.BooleanField(
         default=True,

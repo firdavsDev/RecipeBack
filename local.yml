@@ -3,15 +3,14 @@ version: "3"
 volumes:
   local_postgres_data: {}
   local_postgres_data_backups: {}
-  pgadmin-data: {}
 
 services:
   django: &django
     build:
       context: .
       dockerfile: ./compose/local/Dockerfile
-    image: name_django
-    container_name: django
+    image: recipe_django
+    container_name: recipe_api_django
     depends_on:
       - postgres
     volumes:
@@ -27,8 +26,8 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
-    image: name_postgres
-    container_name: postgres
+    image: recipe_postgres
+    container_name: recipe_api_postgres
     volumes:
       - local_postgres_data:/var/lib/postgresql/data:cached
       - local_postgres_data_backups:/backups:cached
@@ -37,7 +36,7 @@ services:
 
   redis:
     image: redis:6.2-alpine
-    container_name: name_redis
+    container_name: recipe_api_redis
     ports:
       - "6379:6379"
 

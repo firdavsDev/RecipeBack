@@ -2,7 +2,7 @@
 # See more configuration options at https://drf-spectacular.readthedocs.io/en/latest/settings.html#settings
 SPECTACULAR_SETTINGS = {
     "TITLE": "Project API",
-    "DESCRIPTION": "{Name} of API endpoints of Project",
+    "DESCRIPTION": "Recipe Karantin API endpoints",
     "VERSION": "1.0.0",
     "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAdminUser"],
     "SWAGGER_UI_SETTINGS": {
@@ -46,5 +46,4 @@ SPECTACULAR_SETTINGS = {
         r"^api/token/refresh/",
         r"^api/token/verify/",
     ],
-
 }

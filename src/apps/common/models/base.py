@@ -11,5 +11,8 @@ class BaseModel(models.Model):
 
 
 class RoleChoice(models.TextChoices):
-    PLANNER = "planner", _("planner")
-    SALES_MANAGER = "sales_manager", _("sales_manager")
+    pharmacy_owner = "pharmacy_owner", _("Pharmacy Owner")
+    pharmacist_admin = "pharmacist_admin", _("Pharmacist Admin")
+    pharmacist = "pharmacist", _("Pharmacist")
+    user = "user", _("User")
+    super_admin = "super_admin", _("Super Admin")
